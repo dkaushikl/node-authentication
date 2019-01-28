@@ -44,7 +44,7 @@ app.use((err, req, res, next) => {
             stack: error.stack
         });
 })
-
-app.listen(80, function () {
-    console.log('Node server listening on port 80');
+const port = process.env.NODE_ENV || 9000;
+app.listen(port, function () {
+    console.log('Node server listening on port' + port);
 });
